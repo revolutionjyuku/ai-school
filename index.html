@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>revolution塾</title>
+<style>
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+    background-color: #f9f9f9;
+    color: #333;
+}
+header {
+    background: #1e3a8a;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+header h1 {
+    font-size: 42px;
+    margin: 0;
+}
+header h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: 15px;
+}
+.cta-buttons {
+    margin-top: 30px;
+}
+.cta-buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn-main {
+    background: #facc15;
+    color: #000;
+}
+.btn-main:hover {
+    background: #eab308;
+}
+.btn-line {
+    background: #06c755;
+    color: white;
+}
+.btn-line:hover {
+    background: #05b04b;
+}
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+h3 {
+    border-left: 5px solid #1e3a8a;
+    padding-left: 10px;
+    margin-top: 50px;
+}
+.price-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+ul {
+    padding-left: 20px;
+}
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: #1e3a8a;
+    color: white;
+    margin-top: 60px;
+}
+.contact {
+    background: #e0e7ff;
+    padding: 20px;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>教育格差に終止符を。</h1>
+    <h2>AI伴走型 自主学習管理塾 revolution塾</h2>
+
+    <div class="cta-buttons">
+        <a href="#contact" class="btn-main">無料体験はこちら</a>
+        <a href="https://lin.ee/xxxxxxxx" target="_blank" class="btn-line">公式LINEで相談する</a>
+    </div>
+</header>
+
+<div style="border:2px solid #333; padding:25px; margin:40px 0; text-align:center; background:#f9f9f9;">
+  <h3>開校記念｜先着100名様限定特典</h3>
+
+  <p style="font-size:20px; font-weight:bold; margin:15px 0;">
+    初月料金 無料
+  </p>
+
+  <p style="font-size:14px; color:#555; margin-top:15px;">
+    ※定員（100名）に達し次第、特典は終了いたします。<br>
+    ※市販問題集の購入費用は別途必要です。
+  </p>
+</div>
+<section>
+
+<h3>当塾の考え方</h3>
+<p>
+皆さんに質問です。塾に通わなくても成績がいい子の特徴は何でしょうか？<br><br>
+それは、自主学習時間をたくさん取っていることです。<br>
+どんなに素晴らしい講師の授業を受けても、自習をしなければ成績は伸びません。<br>
+私自身、塾講師としてたくさんの生徒を指導してきました。
+その中で強く感じたのは、「授業時間そのもの」が成績を伸ばしているのではない、という事実です。
+成績が伸びる生徒ほど、授業以外の自主学習時間を確保し、自分で理解を深めていました。
+そのため、一般的な学習塾に通い、授業を受けるだけでは成績向上には繋がりにくいと考えています。<br><br>
+
+したがいまして当塾では、授業を行わず、自主学習の徹底管理を行っています。
+</p>
+
+
+<h3>料金表（すべて月額・税込）</h3>
+<div class="price-box">
+<p><strong>対応科目</strong><br>
+英語・国語・数学・理科・社会</p>
+
+<ul>
+<li>1教科：月額 1,650円（税込）</li>
+<li>2教科：月額 3,300円（税込）</li>
+<li>3教科：月額 4,400円（税込）</li>
+<li>4教科：月額 5,500円（税込）</li>
+<li>5教科：月額 6,600円（税込）</li>
+</ul>
+
+<p>
+  ※入塾時に別途指定の市販問題集をご購入いただきます（1教科1,760円程度）。
+  こちらは書店等でのご購入となり、当塾へのお支払いではありません。
+</p>
+
+<h3>料金シミュレーター</h3>
+
+<button onclick="toggleSimulator()">▼ シミュレーターを開く</button>
+
+<div id="simulator" style="display:none; margin-top:20px; border:1px solid #ccc; padding:15px;">
+
+  <label>受講科目数</label>
+  <select id="subjects">
+    <option value="1">1科目</option>
+    <option value="2">2科目</option>
+    <option value="3">3科目</option>
+    <option value="4">4科目</option>
+    <option value="5">5科目</option>
+  </select><br><br>
+
+  <label>入塾月（2026年）</label>
+  <select id="startMonth">
+    <option value="1">1月</option>
+    <option value="2">2月</option>
+    <option value="3">3月</option>
+    <option value="4">4月</option>
+    <option value="5">5月</option>
+    <option value="6">6月</option>
+    <option value="7">7月</option>
+    <option value="8">8月</option>
+    <option value="9">9月</option>
+    <option value="10">10月</option>
+    <option value="11">11月</option>
+    <option value="12">12月</option>
+  </select><br><br>
+
+  <label>入塾日</label>
+  <input type="number" id="startDay" min="1" max="31"><br><br>
+
+  <button onclick="calculate()">計算する</button>
+
+  <div id="result" style="margin-top:15px;"></div>
+
+  <p style="font-size:12px; margin-top:10px;">
+  ※入塾時に別途指定の市販問題集をご購入いただきます（1教科1,760円程度）。
+  こちらは書店等でのご購入となり、当塾へのお支払いではありません。
+  </p>
+</div>
+
+<script>
+function toggleSimulator() {
+  const sim = document.getElementById("simulator");
+  sim.style.display = sim.style.display === "none" ? "block" : "none";
+}
+
+function calculate() {
+
+  const monthlyTable = {
+    1: 1650,
+    2: 3300,
+    3: 4400,
+    4: 5500,
+    5: 6600
+  };
+
+  const subjects = Number(document.getElementById("subjects").value);
+  const month = Number(document.getElementById("startMonth").value);
+  const startDay = Number(document.getElementById("startDay").value);
+
+  const monthlyFee = monthlyTable[subjects];
+
+  const lastDay = new Date(2026, month, 0).getDate();
+
+  if(startDay < 1 || startDay > lastDay){
+    document.getElementById("result").innerHTML = "正しい日付を入力してください。";
+    return;
+  }
+
+  const remainingDays = lastDay - startDay + 1;
+  const dailyRate = monthlyFee / lastDay;
+  const prorated = Math.round(dailyRate * remainingDays);
+
+  const nextMonth = monthlyFee;
+
+  const firstPayment = prorated + nextMonth;
+
+  document.getElementById("result").innerHTML = `
+    <strong>初月お支払い：${firstPayment.toLocaleString()}円</strong><br>
+    （内訳：初月日割り${prorated.toLocaleString()}円 + 翌月分${nextMonth.toLocaleString()}円）<br><br>
+    2か月目以降：${nextMonth.toLocaleString()}円／月<br><br>
+    お支払い：前月最終週の平日
+  `;
+}
+</script>
+
+
+<p>
+<p>
+<p>
+<strong>【初月のお支払いについて】</strong><br>
+初月は2か月分頂戴しております。<br>
+※3か月目以降のお支払いは月額料金のみとなります。
+</p>
+<strong>上記以外の料金は一切発生いたしません。</strong>
+</p>
+</div>
+
+
+
+
+<h3>サービス内容</h3>
+<ul>
+<li>現在の成績と志望校から逆算し、毎週の学習内容・宿題を完全設計</li>
+<li>週1回の確認テストで定着度をチェック</li>
+<li>学習状況を保護者様へ共有</li>
+<li>オンライン自習室で「やらざるを得ない環境」を提供</li>
+</ul>
+
+<h3>なぜ成績が上がるのか？</h3>
+
+<p>
+当塾では、「やる気」や「才能」に頼りません。
+成績が伸びやすい仕組みをつくっています。
+</p>
+
+<ul>
+  <li><strong>① 毎日の学習計画を明確にする</strong><br>
+  何をどこまでやるかを具体的に決めるため、迷いがなくなります。
+  </li><br>
+
+  <li><strong>② 参考書を繰り返し解く</strong><br>
+  自分の手を動かす時間を増やします。
+  問題演習量が増えることで定着率が上がります。
+  </li><br>
+
+  <li><strong>③ 解けない問題を放置しない</strong><br>
+  自分で調べる力を身につけつつ、
+  最後は塾長が確認します。
+  「わからないまま」を作りません。
+  </li>
+</ul>
+
+
+<p>
+当塾では、勉強だけでなく、
+“AIを使って伸びる力”を育てます。成績向上を本気で目指すための環境を整えています。
+</p>
+
+<p style="font-size:13px; color:#555;">
+※成績向上には個人差がありますが、学習時間と演習量の増加は確実に積み上がります。
+</p>
+
+<h3>AI × 人による学習管理</h3>
+<p>
+当塾では、塾長による直接管理に加え、AIを活用した進捗分析・学習最適化システムを導入しています。<br>
+AIが学習状況を客観的に分析し、塾長が最終判断を行うことで、一人ひとりに最適な学習計画を設計します。<br><br>
+
+</p>
+
+<h3>なぜこんなにリーズナブルであるのか</h3>
+<p>
+塾は高いイメージがありますよね。
+塾の平均的な料金は月3万円と言われております。
+私は、経済的な理由で学習機会が制限されることがない社会を目指しています。
+そのため、1教科1,650円/月と破格的な料金でやらせていただいております。
+教室をもたず、授業、特別講習などを行わず、自主学習管理に特化することでコストを削減しております。
+さらにAI活用で業務効率化し、その分を月謝へ還元しています。
+</p>
+
+<h3>塾長紹介</h3>
+<p>
+茨城県立下妻第一高等学校卒業。<br>
+高校卒業後、個別指導塾講師として中学生の学習指導に携わった後、ITエンジニアとして実務経験を積む。<br><br>
+ITエンジニアとしての知識を活かし、AIを活用した学習管理システムを独自に設計。<br>
+データに基づいた進捗分析と最適な学習計画の設計を行っています。<br><br>
+人による丁寧な管理とAIによる客観的な分析を組み合わせることで、効率的かつ再現性のある学習環境を提供しています。
+</p>
+
+<h3>保護者の皆さまへ</h3>
+
+<p>
+「授業をしない塾で本当に大丈夫なのか」
+そう感じられるのは当然だと思います。
+</p>
+
+<p>
+しかし、成績が伸びない一番の原因は
+「わかりやすい授業が足りないこと」ではなく、
+「家庭学習がうまくいっていないこと」です。
+</p>
+
+<p>
+当塾では、毎日の学習内容を明確にし、
+進捗を確認し、つまずきを放置しません。
+</p>
+
+<p>
+また、学習管理には最新のAI技術も活用しています。
+ただし、AIに任せきりにすることはありません。
+最終的な判断と責任は、すべて塾長である私が担います。
+</p>
+
+<p>
+私はこれまで塾講師として指導経験を積み、
+現在はITエンジニアとしても活動しております。
+教育現場の経験と、最新技術の知識の両方を活かし、
+効率的かつ本質的な学習サポートを行います。
+</p>
+
+<p>
+まずは1週間の無料体験で、実際の仕組みをご確認ください。
+</p>
+
+<h3>無料体験の流れ</h3>
+
+<ol>
+  <li>フォームまたはLINEからお申し込み</li>
+  <li>現在の成績・志望校をヒアリング</li>
+  <li>学習計画の作成</li>
+  <li>1週間の体験スタート</li>
+  <li>体験後、継続のご判断</li>
+</ol>
+<h3>無料体験のお申し込み</h3>
+
+<form>
+  <label>お子様のお名前</label><br>
+  <input type="text" name="name" required><br><br>
+
+  <label>学年</label><br>
+  <select name="grade" required>
+    <option>中1</option>
+    <option>中2</option>
+    <option>中3</option>
+  </select><br><br>
+
+  <label>メールアドレス</label><br>
+  <input type="email" name="email" required><br><br>
+
+  <label>ご相談内容（任意）</label><br>
+  <textarea name="message" rows="4"></textarea><br><br>
+
+  <button type="submit">無料体験に申し込む</button>
+</form>
+
+<p style="font-size:12px;">
+※送信後、24時間以内にご連絡いたします。
+</p>
+
+<a href="https://lin.ee/LgSXbWB" target="_blank"
+   style="
+   position:fixed;
+   bottom:20px;
+   right:20px;
+   background:#06C755;
+   color:white;
+   padding:15px 20px;
+   border-radius:50px;
+   text-decoration:none;
+   font-weight:bold;
+   box-shadow:0 4px 10px rgba(0,0,0,0.3);
+   z-index:9999;">
+   LINEで相談・無料体験
+</a>
+
+
+
+<h3>よくある質問</h3>
+
+<strong>Q. 本当にこの料金だけですか？</strong><br>
+A. はい。月額料金以外の費用はいただきません。
+入塾時のみ市販問題集をご購入いただきます。
+
+<br><br>
+
+<strong>Q. 授業は行わないのですか？</strong><br>
+A. はい。当塾では一方的な授業は行いません。
+
+これからの時代は、誰かに教えてもらう力よりも、
+自分で調べ、考え、解決する力が重要になります。
+
+そのため、参考書を使った自主学習を中心に進め、
+まずは自分の力で理解する習慣を身につけます。
+
+また、正しい方法でAIなどのツールも活用し、
+「使われる側」ではなく「使いこなす側」になる力も育てます。
+
+それでも解決できない場合は、
+塾長がしっかりサポートしますのでご安心ください。
+
+将来、高校・大学・社会に出ても通用する学習力を育てます。
+<br><br>
+<strong>Q. AIはどのように使うのですか？</strong><br>
+A. 学習計画作成や理解度チェックに活用しますが、
+最終管理は塾長が責任を持って行います。
+
+<br><br>
+
+<strong>Q. 対象学年は？</strong><br>
+A. 現在は中学生を対象としております。
+
+<br><br>
+
+
+
+<h3 id="contact">お問い合わせ</h3>
+<div class="contact">
+<p>
+無料体験・ご質問は公式LINEまたはメールよりご連絡ください。<br><br>
+<strong>yourmail@example.com</strong><br>
+<a href="https://lin.ee/LgSXbWB" target="_blank">▶ 公式LINEはこちら</a>
+</p>
+</div>
+
+</section>
+
+<div class="footer">
+© 2026 inovation塾 All Rights Reserved.
+</div>
+
+</body>
+</html>
