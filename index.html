@@ -246,13 +246,17 @@ th, td {
 
 <h3>他塾との比較</h3>
 
-<div class="comparison-table">
-  <div class="table-scroll">
+<p class="comparison-note">
+※スマホの場合は、横にスクロールして全体をご確認いただけます
+</p>
+
+<div class="comparison-wrapper">
+  <div class="comparison-table">
     <table>
       <thead>
         <tr>
-          <th>比較項目</th>
-          <th>revolution塾</th>
+          <th class="sticky-col">比較項目</th>
+          <th class="highlight-col">revolution塾</th>
           <th>A社進捗管理型塾</th>
           <th>B社授業型塾</th>
         </tr>
@@ -260,50 +264,50 @@ th, td {
       <tbody>
 
         <tr>
-          <td>月謝</td>
-          <td>1教科 5,500円（税込）</td>
+          <td class="sticky-col">月謝</td>
+          <td class="highlight-col strong">1教科 5,500円（税込）</td>
           <td>1教科 22,000円〜</td>
           <td>1教科 22,528円〜（週1回80分〜）</td>
         </tr>
 
         <tr>
-          <td>入会金</td>
-          <td>〇 なし</td>
+          <td class="sticky-col">入会金</td>
+          <td class="highlight-col strong">〇 なし</td>
           <td>△ 22,000円（税込）</td>
           <td>△ 19,800円（税込）</td>
         </tr>
 
         <tr>
-          <td>指導方式</td>
-          <td>市販参考書＋AIによる毎日の進捗管理＋週1回確認テスト</td>
+          <td class="sticky-col">指導方式</td>
+          <td class="highlight-col">市販参考書＋AIによる毎日の進捗管理＋週1回確認テスト</td>
           <td>授業なし、AI教材＋サポート中心</td>
           <td>オンライン個別授業</td>
         </tr>
 
         <tr>
-          <td>学習管理</td>
-          <td>〇 AI＋塾長による徹底管理</td>
+          <td class="sticky-col">学習管理</td>
+          <td class="highlight-col">〇 AI＋塾長による徹底管理</td>
           <td>〇 AI教材＋進捗管理</td>
           <td>△ 講師主体</td>
         </tr>
 
         <tr>
-          <td>確認テスト・面談</td>
-          <td>〇 週1回必ず実施</td>
+          <td class="sticky-col">面談</td>
+          <td class="highlight-col">〇 保護者面談月1回実施(週一回メールにて生徒様の進捗報告実施)</td>
           <td>〇 定期的な作戦会議あり</td>
           <td>△ 授業に含まれる場合あり</td>
         </tr>
 
         <tr>
-          <td>自習室</td>
-          <td>〇 オンライン自習室あり</td>
+          <td class="sticky-col">自習室</td>
+          <td class="highlight-col">〇 オンライン自習室あり</td>
           <td>〇 オンライン自習室あり</td>
           <td>〇 オンライン自習室あり</td>
         </tr>
 
         <tr>
-          <td>教材費</td>
-          <td>△ 指定市販教材購入あり（1教科1,760円）</td>
+          <td class="sticky-col">教材費</td>
+          <td class="highlight-col">△ 指定市販教材購入あり（1教科1,760円）</td>
           <td>〇 AI教材込み</td>
           <td>〇 教材費不要</td>
         </tr>
@@ -314,54 +318,116 @@ th, td {
 </div>
 
 <style>
-.comparison-table {
-  margin-top: 20px;
+
+/* ===== 注意テキスト ===== */
+.comparison-note{
+  font-size:13px;
+  color:#6b7280;
+  margin-bottom:8px;
 }
 
-/* 横スクロール用ラッパー */
-.table-scroll {
+/* ===== 横スクロール制御 ===== */
+.comparison-wrapper {
+  position: relative;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-/* テーブル基本 */
+/* スクロールヒント（右フェード） */
+.comparison-wrapper::after {
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  width:40px;
+  height:100%;
+  pointer-events:none;
+  background:linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
+}
+
+/* ===== テーブル基本 ===== */
 .comparison-table table {
+  min-width: 820px;
+  width:100%;
   border-collapse: collapse;
-  background: #fff;
-  min-width: 720px; /* ←これが重要：潰れ防止 */
-  width: 100%;
+  background:#fff;
+  box-shadow:0 4px 20px rgba(0,0,0,0.05);
+  border-radius:10px;
+  overflow:hidden;
 }
 
 .comparison-table th,
 .comparison-table td {
-  border: 1px solid #ddd;
-  padding: 12px;
-  text-align: left;
-  vertical-align: top;
-  font-size: 14px;
-  white-space: normal;
+  border:1px solid #e5e7eb;
+  padding:14px;
+  text-align:left;
+  vertical-align:top;
+  font-size:14px;
 }
 
-.comparison-table th {
-  background: #f3f4f6;
-  font-weight: bold;
+/* ===== ヘッダー固定 ===== */
+.comparison-table thead th{
+  background:#f9fafb;
+  font-weight:bold;
+  position:sticky;
+  top:0;
+  z-index:5;
 }
 
-.comparison-table td:nth-child(2) {
-  background: #f0fdf4;
-  font-weight: 500;
+/* ===== 左列固定 ===== */
+.sticky-col{
+  position:sticky;
+  left:0;
+  background:#ffffff;
+  z-index:4;
+  font-weight:bold;
 }
 
-/* スマホのみ微調整 */
-@media (max-width: 768px) {
-
-  .comparison-table th,
-  .comparison-table td {
-    font-size: 13px;
-    padding: 10px;
-  }
-
+/* 左上セル最前面 */
+thead .sticky-col{
+  z-index:6;
+  background:#f3f4f6;
 }
+
+/* ===== revolution強調列 ===== */
+.highlight-col{
+  background:#ecfdf5;
+  position:relative;
+}
+
+/* 列に縦ライン強調 */
+.highlight-col::after{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  width:4px;
+  height:100%;
+  background:#22c55e;
+}
+
+/* 強調文字 */
+.strong{
+  font-size:15px;
+  font-weight:700;
+  color:#065f46;
+}
+
+/* ホバー効果（PC） */
+.comparison-table tbody tr:hover{
+  background:#f9fafb;
+  transition:0.2s;
+}
+
+/* スクロールバー */
+.comparison-wrapper::-webkit-scrollbar{
+  height:6px;
+}
+.comparison-wrapper::-webkit-scrollbar-thumb{
+  background:#d1d5db;
+  border-radius:3px;
+}
+
 </style>
 
 <h3 id="contact">お問い合わせ</h3>
