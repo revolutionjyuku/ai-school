@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>revolution塾</title>
+
 <style>
 body {
     font-family: "Helvetica Neue", Arial, sans-serif;
@@ -27,6 +28,10 @@ header h2 {
     font-size: 20px;
     font-weight: normal;
     margin-top: 15px;
+}
+header h3 {
+    margin-top: 10px;
+    font-weight: normal;
 }
 .cta-buttons {
     margin-top: 30px;
@@ -85,6 +90,41 @@ ul {
     padding: 20px;
     border-radius: 10px;
 }
+table {
+    width:100%;
+    border-collapse:collapse;
+    text-align:left;
+    border:1px solid #ccc;
+}
+th, td {
+    border:1px solid #ccc;
+    padding:8px;
+}
+@media screen and (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+  thead tr {
+    display: none;
+  }
+  td {
+    position: relative;
+    padding-left: 50%;
+    padding-top:10px;
+    padding-bottom:10px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-weight: bold;
+    width: 45%;
+  }
+}
 </style>
 </head>
 
@@ -93,21 +133,18 @@ ul {
 <header>
     <h1>教育格差に終止符を。</h1>
     <h2>偏差値60以上の高校を目指す</h2>
-　　<h3>AI伴走型 自主学習管理塾 revolution塾</h3>
+    <h3>AI伴走型 自主学習管理塾 revolution塾</h3>
 
     <div class="cta-buttons">
-        <a href="#contact" class="btn-main">無料体験はこちら</a>
-        <a href="https://lin.ee/T21m4kq" target="_blank" class="btn-line">公式LINEで相談する</a>
+               <a href="https://lin.ee/T21m4kq" target="_blank" class="btn-line">無料体験はこちらから</a>
     </div>
 </header>
 
 <div style="border:2px solid #333; padding:25px; margin:40px 0; text-align:center; background:#f9f9f9;">
   <h3>開校記念｜先着100名様限定特典</h3>
-
   <p style="font-size:20px; font-weight:bold; margin:15px 0;">
     初月料金 無料
   </p>
-
   <p style="font-size:14px; color:#555; margin-top:15px;">
     ※定員（100名）に達し次第、特典は終了いたします。<br>
     ※市販問題集の購入費用は別途必要です。
@@ -136,8 +173,6 @@ ul {
 自己管理ができていないからです。
 </p>
 
-
-
 <p>
 成績は「情報量」ではなく、<br>
 <strong>管理と実行量</strong>で決まります。
@@ -147,57 +182,45 @@ ul {
 
 <p>
 成績が良い生徒は、なぜ自己管理ができるのでしょうか？<br>
-それは、すでに勉強の成功体験を積んでいるからです。  
+それは、すでに勉強の成功体験を積んでいるからです。
 何をどう勉強すれば成果が出るかを理解し、自分で学習計画を立てて実行できます。
 </p>
 
 <p>
-一方、成果が出ていない生徒は成功体験が少なく、  
+一方、成果が出ていない生徒は成功体験が少なく、
 何をどの順番でやればよいかが分からないため、自己管理が難しいのです。
 </p>
 
 <p>
-当塾では、この「成功体験の少なさ」を補うため、毎日の学習計画と確認テストを通じて  
-小さな成功体験を積ませ、自己管理できる力を育てます。  
-さらに、AIの進化により多くの仕事が自動化される時代、AIを使いこなせる力は不可欠です。  
-中学の勉強を通して、AIを活用し学習を自分で管理・最適化する力を身につけることもできます。  
+当塾では、この「成功体験の少なさ」を補うため、毎日の学習計画と確認テストを通じて
+小さな成功体験を積ませ、自己管理できる力を育てます。
+さらに、AIの進化により多くの仕事が自動化される時代、AIを使いこなせる力は不可欠です。
+中学の勉強を通して、AIを活用し学習を自分で管理・最適化する力を身につけることもできます。
 これは将来にわたって役立つ、大きなメリットとなります。
 </p>
 
 <p>
-そもそも、授業は本当に必要でしょうか？  
-解説動画やChatGPTなどを使えば、解き方や理解の手順は自分で調べられます。  
-つまり、授業料を払って「教えてもらう」必要は必ずしもありません。  
+そもそも、授業は本当に必要でしょうか？
+解説動画やChatGPTなどを使えば、解き方や理解の手順は自分で調べられます。
+つまり、授業料を払って「教えてもらう」必要は必ずしもありません。
 重要なのは、自分で学習を管理し、行動を積み重ねる力です。
 </p>
 
 <p style="font-weight:bold;">
-勉強の成果を実感することで、「やればできる」という感覚が生まれます。  
-やる気は最初から必要ではなく、行動と成功体験の積み重ねによって後からついてくるのです。  
+勉強の成果を実感することで、「やればできる」という感覚が生まれます。
+やる気は最初から必要ではなく、行動と成功体験の積み重ねによって後からついてくるのです。
 さらに、AIを使いこなせる力も、学習の好循環を生む重要な要素となります。
 </p>
-
-
-
-
-
-
 
 <h3>料金表（すべて月額・税込）</h3>
 
 <div class="price-box">
-<p><strong>(英・国・数・社・理)5科目の中から組み合わせ</strong></p>
+<p><strong>(英・数・社・理)4科目の中から組み合わせ</strong></p>
+<p style="font-size:24px; font-weight:bold;">1教科:月額 5,500円（税込）</p>
+<p style="font-size:24px; font-weight:bold;">2教科:月額 8,800円（税込）</p>
+<p style="font-size:24px; font-weight:bold;">3教科:月額 11,300円（税込）</p>
+<p style="font-size:24px; font-weight:bold;">4教科:月額 13,300円（税込）</p>
 
-<p style="font-size:24px; font-weight:bold;">
-1教科:月額 4,400円 （税込）
-<p style="font-size:24px; font-weight:bold;">
-2教科:月額 8,800円 （税込）
-<p style="font-size:24px; font-weight:bold;">
-3教科:月額 11,500円（税込）
-<p style="font-size:24px; font-weight:bold;">
-4教科:月額 14,500円（税込）
-<p style="font-size:24px; font-weight:bold;">
-5教科:月額 17,000円（税込）
 <p>
 ※入塾時に別途指定の市販問題集をご購入いただきます（1教科1,760円(税込)(2026年2月現在)）。<br>
 こちらは書店等でのご購入となり、当塾へのお支払いではありません。
@@ -209,9 +232,7 @@ ul {
 ※3か月目以降のお支払いは前月末払いとなります。
 </p>
 
-<p>
-<strong>上記以外の料金は一切発生いたしません。</strong>
-</p>
+<p><strong>上記以外の料金は一切発生いたしません。</strong></p>
 </div>
 
 <h3>サービス内容</h3>
@@ -220,113 +241,71 @@ ul {
 <li>週1回の確認テストで定着度をチェック</li>
 <li>学習状況を保護者様へ共有</li>
 <li>オンライン自習室で「やらざるを得ない環境」を提供</li>
+<li>塾長にいつでも何回でもLINEで相談</li>
 </ul>
 
+<h3>他塾との比較</h3>
 
-<section>
-<section>
-<section>
-<section>
-<section>
-<section>
-<section>
-<section>
-<section>
-<table style="width:100%; border-collapse:collapse; text-align:left; border:1px solid #ccc;">
-  <thead>
-    <tr>
-      <th style="background:#a7f3d0; padding:12px; border:1px solid #ccc;">比較項目</th>
-      <th style="background:#fde68a; padding:12px; border:1px solid #ccc;">revolution塾</th>
-      <th style="background:#dbeafe; padding:12px; border:1px solid #ccc;">A社進捗管理型塾</th>
-      <th style="background:#fee2e2; padding:12px; border:1px solid #ccc;">B社授業型塾</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td data-label="比較項目" style="border:1px solid #ccc; padding:8px;">月謝</td>
-      <td data-label="revolution塾" style="border:1px solid #ccc; padding:8px;">5教科 9,900円（税込）</td>
-      <td data-label="A社進捗管理型塾" style="border:1px solid #ccc; padding:8px;">1教科 22,000円〜</td>
-      <td data-label="B社授業型塾" style="border:1px solid #ccc; padding:8px;">1教科 22,528円〜（週1回80分〜）</td>
-    </tr>
-    <tr>
-      <td data-label="比較項目" style="border:1px solid #ccc; padding:8px;">入会金</td>
-      <td data-label="revolution塾" style="border:1px solid #ccc; padding:8px;">〇 なし</td>
-      <td data-label="A社進捗管理型塾" style="border:1px solid #ccc; padding:8px;">△ 22,000円（税込）</td>
-      <td data-label="B社授業型塾" style="border:1px solid #ccc; padding:8px;">△ 19,800円（税込）</td>
-    </tr>
-    <tr>
-      <td data-label="比較項目" style="border:1px solid #ccc; padding:8px;">指導方式</td>
-      <td data-label="revolution塾" style="border:1px solid #ccc; padding:8px;">市販参考書＋AIによる毎日の進捗管理＋週1回確認テストで理解度チェック</td>
-      <td data-label="A社進捗管理型塾" style="border:1px solid #ccc; padding:8px;">授業なし、AI教材＋サポート中心</td>
-      <td data-label="B社授業型塾" style="border:1px solid #ccc; padding:8px;">オンライン個別授業（講師によるリアル指導）</td>
-    </tr>
-    <tr>
-      <td data-label="比較項目" style="border:1px solid #ccc; padding:8px;">学習管理</td>
-      <td data-label="revolution塾" style="border:1px solid #ccc; padding:8px;">〇 AI＋塾長による徹底管理</td>
-      <td data-label="A社進捗管理型塾" style="border:1px solid #ccc; padding:8px;">〇 AI教材＋スタディトレーナーによる進捗管理</td>
-      <td data-label="B社授業型塾" style="border:1px solid #ccc; padding:8px;">△ 指導は講師主体（進捗管理は講師と生徒のやり取り）</td>
-    </tr>
-    <tr>
-      <td data-label="比較項目" style="border:1px solid #ccc; padding:8px;">確認テスト・面談</td>
-      <td data-label="revolution塾" style="border:1px solid #ccc; padding:8px;">〇 週1回必ず実施</td>
-      <td data-label="A社進捗管理型塾" style="border:1px solid #ccc; padding:8px;">〇 定期的な「作戦会議」や振り返りあり</td>
-      <td data-label="B社授業型塾" style="border:1px solid #ccc; padding:8px;">△ 試験対策・振返りは授業に含まれる場合あり</td>
-    </tr>
-    <tr>
-      <td data-label="比較項目" style="border:1px solid #ccc; padding:8px;">自習室</td>
-      <td data-label="revolution塾" style="border:1px solid #ccc; padding:8px;">〇 オンライン自習室あり</td>
-      <td data-label="A社進捗管理型塾" style="border:1px solid #ccc; padding:8px;">〇 オンライン自習室あり</td>
-      <td data-label="B社授業型塾" style="border:1px solid #ccc; padding:8px;">〇 オンライン自習室あり</td>
-    </tr>
-    <tr>
-      <td data-label="比較項目" style="border:1px solid #ccc; padding:8px;">教材費</td>
-      <td data-label="revolution塾" style="border:1px solid #ccc; padding:8px;">△ 指定市販教材購入あり（8,800円）</td>
-      <td data-label="A社進捗管理型塾" style="border:1px solid #ccc; padding:8px;">〇 AI教材込み（追加教材不要）</td>
-      <td data-label="B社授業型塾" style="border:1px solid #ccc; padding:8px;">〇 教材費不要（教材販売なし）</td>
-    </tr>
-    <tr>
-      <td data-label="比較項目" style="border:1px solid #ccc; padding:8px;">特徴</td>
-      <td data-label="revolution塾" style="border:1px solid #ccc; padding:8px;">AI中心の学習管理＋圧倒的低価格</td>
-      <td data-label="A社進捗管理型塾" style="border:1px solid #ccc; padding:8px;">AI教材＋スタディトレーナーで個別進捗管理・自学支援</td>
-      <td data-label="B社授業型塾" style="border:1px solid #ccc; padding:8px;">講師による対面指導中心（オンライン授業実績あり）</td>
-    </tr>
-  </tbody>
+<table>
+<thead>
+<tr>
+<th>比較項目</th>
+<th>revolution塾</th>
+<th>A社進捗管理型塾</th>
+<th>B社授業型塾</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="比較項目">月謝</td>
+<td data-label="revolution塾">1教科 5,500円（税込）</td>
+<td data-label="A社進捗管理型塾">1教科 22,000円〜</td>
+<td data-label="B社授業型塾">1教科 22,528円〜（週1回80分〜）</td>
+</tr>
+<tr>
+<td data-label="比較項目">入会金</td>
+<td data-label="revolution塾">〇 なし</td>
+<td data-label="A社進捗管理型塾">△ 22,000円（税込）</td>
+<td data-label="B社授業型塾">△ 19,800円（税込）</td>
+</tr>
+<tr>
+<td data-label="比較項目">指導方式</td>
+<td data-label="revolution塾">市販参考書＋AIによる毎日の進捗管理＋週1回確認テストで理解度チェック</td>
+<td data-label="A社進捗管理型塾">授業なし、AI教材＋サポート中心</td>
+<td data-label="B社授業型塾">オンライン個別授業（講師によるリアル指導）</td>
+</tr>
+<tr>
+<td data-label="比較項目">学習管理</td>
+<td data-label="revolution塾">〇 AI＋塾長による徹底管理</td>
+<td data-label="A社進捗管理型塾">〇 AI教材＋スタディトレーナーによる進捗管理</td>
+<td data-label="B社授業型塾">△ 指導は講師主体</td>
+</tr>
+<tr>
+<td data-label="比較項目">確認テスト・面談</td>
+<td data-label="revolution塾">〇 週1回必ず実施</td>
+<td data-label="A社進捗管理型塾">〇 定期的な作戦会議あり</td>
+<td data-label="B社授業型塾">△ 授業に含まれる場合あり</td>
+</tr>
+<tr>
+<td data-label="比較項目">自習室</td>
+<td data-label="revolution塾">〇 オンライン自習室あり</td>
+<td data-label="A社進捗管理型塾">〇 オンライン自習室あり</td>
+<td data-label="B社授業型塾">〇 オンライン自習室あり</td>
+</tr>
+<tr>
+<td data-label="比較項目">教材費</td>
+<td data-label="revolution塾">△ 指定市販教材購入あり（1教科1,760円）</td>
+<td data-label="A社進捗管理型塾">〇 AI教材込み</td>
+<td data-label="B社授業型塾">〇 教材費不要</td>
+</tr>
+<tr>
+<td data-label="比較項目">特徴</td>
+<td data-label="revolution塾">AI中心の学習管理＋圧倒的低価格</td>
+<td data-label="A社進捗管理型塾">AI教材＋個別進捗管理</td>
+<td data-label="B社授業型塾">講師による対面指導中心</td>
+</tr>
+</tbody>
 </table>
-
-<style>
-@media screen and (max-width: 768px) {
-  table, thead, tbody, th, td, tr {
-    display: block;
-    width: 100%;
-  }
-  thead tr {
-    display: none;
-  }
-  td {
-    position: relative;
-    padding-left: 50%;
-    padding-top:10px;
-    padding-bottom:10px;
-    border: 1px solid #ccc;
-    text-align: left;
-  }
-  td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    font-weight: bold;
-    width: 45%;
-  }
-}
-</style>
-
-
-
-
-
-
-
 
 <h3 id="contact">お問い合わせ</h3>
 <div class="contact">
