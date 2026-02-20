@@ -225,6 +225,40 @@ ul {
   color:#555;
 }
 
+/* ヘッダー背景：炎っぽくグラデーションアニメーション */
+.header-bg {
+    background: linear-gradient(45deg, #ff5e5e, #ffbb33, #ff5e5e);
+    background-size: 400% 400%;
+    animation: fireBG 8s ease infinite;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+@keyframes fireBG {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 20px 0 10px 0;
+}
+
+header h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+}
+
 </style>
 
 </head>
@@ -253,14 +287,14 @@ const timer = setInterval(function() {
 
 <body>
 
-<header>
-    <h1>教育格差に終止符を。</h1>
-    <h2>勉強できないはもう言わせない</h2>
-    <h3>AI伴走型 自主学習管理塾 revolution塾</h3>
+<header class="header-bg">
+  <h1 class="slide-in-left">勉強できないは<br>もう言わせない</h1>
+  <h2 class="slide-in-left delay-1">中学生専門</h2>
+  <h3 class="slide-in-left delay-2">revolution塾</h3>
 
-    <div class="cta-buttons">
-               <a href="https://lin.ee/T21m4kq" target="_blank" class="btn-line">無料体験はこちらから</a>
-    </div>
+  <div class="cta-buttons">
+      <a href="https://lin.ee/T21m4kq" target="_blank" class="btn-line">無料体験はこちら</a>
+  </div>
 </header>
 
 <div class="slide-offer">
@@ -348,7 +382,7 @@ const timer = setInterval(function() {
 <h3>料金表（すべて月額・税込）</h3>
 
 <div class="price-box">
-<p><strong>(英・数・社・理)4科目の中から組み合わせ</strong></p>
+<p><strong>(英・数・社・理)4科目の中から組み合わせ（国語は現在カリキュラム作成中のため対応不可）</strong></p>
 <p style="font-size:24px; font-weight:bold;">スタンダードプラン</p>
 
 <p style="font-size:24px; font-weight:bold;">1教科:月額 5,500円（税込）</p>
@@ -384,7 +418,7 @@ const timer = setInterval(function() {
 </ul>
 
 <p style="font-size:13px; color:#6b7280; margin-top:8px; line-height:1.6;">
-※対象科目：英語・数学・理科・社会（国語は対象外）
+※対象科目：英語・数学・理科・社会（（国語は現在カリキュラム作成中のため対象外））
 </p>
 
 <h3>他塾との比較</h3>
@@ -591,6 +625,15 @@ AI分析 × 塾長監修による完全オーダーメイド対策を行いま�
 無料体験・ご質問は公式LINEよりご連絡ください。<br><br>
 <a href="https://lin.ee/T21m4kq" target="_blank">▶ 公式LINEはこちら</a>
 </p>
+</div>
+
+<!-- 会社情報 -->
+<div class="company-info" style="max-width:900px; margin:40px auto; padding:20px; background:#f3f4f6; border-radius:10px; font-size:14px; color:#333;">
+  <p><strong>塾名：</strong>revolution塾</p>
+  <p><strong>運営者：</strong>古沢 凜人</p>
+  <p><strong>所在地：</strong>茨城県結城郡八千代町久下田608-4</p>
+  <p><strong>電話番号：</strong>070-9115-7632</p>
+  <p><strong>メール：</strong>yakyu.daisuki.rinto@icloud.com</p>
 </div>
 
 </section>
