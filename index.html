@@ -246,6 +246,7 @@ th, td {
 
 <h3>他塾との比較</h3>
 
+<div class="comparison-table">
 <table>
 <thead>
 <tr>
@@ -256,56 +257,137 @@ th, td {
 </tr>
 </thead>
 <tbody>
+
 <tr>
 <td data-label="比較項目">月謝</td>
 <td data-label="revolution塾">1教科 5,500円（税込）</td>
 <td data-label="A社進捗管理型塾">1教科 22,000円〜</td>
 <td data-label="B社授業型塾">1教科 22,528円〜（週1回80分〜）</td>
 </tr>
+
 <tr>
 <td data-label="比較項目">入会金</td>
 <td data-label="revolution塾">〇 なし</td>
 <td data-label="A社進捗管理型塾">△ 22,000円（税込）</td>
 <td data-label="B社授業型塾">△ 19,800円（税込）</td>
 </tr>
+
 <tr>
 <td data-label="比較項目">指導方式</td>
-<td data-label="revolution塾">市販参考書＋AIによる毎日の進捗管理＋週1回確認テストで理解度チェック</td>
+<td data-label="revolution塾">市販参考書＋AIによる毎日の進捗管理＋週1回確認テスト</td>
 <td data-label="A社進捗管理型塾">授業なし、AI教材＋サポート中心</td>
-<td data-label="B社授業型塾">オンライン個別授業（講師によるリアル指導）</td>
+<td data-label="B社授業型塾">オンライン個別授業</td>
 </tr>
+
 <tr>
 <td data-label="比較項目">学習管理</td>
 <td data-label="revolution塾">〇 AI＋塾長による徹底管理</td>
-<td data-label="A社進捗管理型塾">〇 AI教材＋スタディトレーナーによる進捗管理</td>
-<td data-label="B社授業型塾">△ 指導は講師主体</td>
+<td data-label="A社進捗管理型塾">〇 AI教材＋進捗管理</td>
+<td data-label="B社授業型塾">△ 講師主体</td>
 </tr>
+
 <tr>
 <td data-label="比較項目">確認テスト・面談</td>
 <td data-label="revolution塾">〇 週1回必ず実施</td>
 <td data-label="A社進捗管理型塾">〇 定期的な作戦会議あり</td>
 <td data-label="B社授業型塾">△ 授業に含まれる場合あり</td>
 </tr>
+
 <tr>
 <td data-label="比較項目">自習室</td>
 <td data-label="revolution塾">〇 オンライン自習室あり</td>
 <td data-label="A社進捗管理型塾">〇 オンライン自習室あり</td>
 <td data-label="B社授業型塾">〇 オンライン自習室あり</td>
 </tr>
+
 <tr>
 <td data-label="比較項目">教材費</td>
 <td data-label="revolution塾">△ 指定市販教材購入あり（1教科1,760円）</td>
 <td data-label="A社進捗管理型塾">〇 AI教材込み</td>
 <td data-label="B社授業型塾">〇 教材費不要</td>
 </tr>
-<tr>
-<td data-label="比較項目">特徴</td>
-<td data-label="revolution塾">AI中心の学習管理＋圧倒的低価格</td>
-<td data-label="A社進捗管理型塾">AI教材＋個別進捗管理</td>
-<td data-label="B社授業型塾">講師による対面指導中心</td>
-</tr>
+
 </tbody>
 </table>
+</div>
+
+<style>
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 14px;
+}
+
+.comparison-table th {
+    background: #f3f4f6;
+    font-weight: bold;
+}
+
+.comparison-table td:nth-child(2) {
+    background: #f0fdf4;
+    font-weight: 500;
+}
+
+/* ===== スマホ最適化 ===== */
+@media (max-width: 768px) {
+
+.comparison-table table,
+.comparison-table thead,
+.comparison-table tbody,
+.comparison-table th,
+.comparison-table td,
+.comparison-table tr {
+    display: block;
+    width: 100%;
+}
+
+.comparison-table thead {
+    display: none;
+}
+
+.comparison-table tr {
+    margin-bottom: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px;
+    background: #ffffff;
+}
+
+.comparison-table td {
+    border: none;
+    padding: 8px 10px;
+    position: relative;
+    padding-left: 45%;
+    font-size: 14px;
+}
+
+.comparison-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 40%;
+    font-weight: bold;
+    font-size: 13px;
+    color: #374151;
+}
+
+.comparison-table td:nth-child(2) {
+    background: #ecfdf5;
+    border-radius: 6px;
+}
+
+}
+</style>
 
 <h3 id="contact">お問い合わせ</h3>
 <div class="contact">
