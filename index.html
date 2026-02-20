@@ -247,7 +247,7 @@ th, td {
 <h3>他塾との比較</h3>
 
 <p class="comparison-note">
-※スマホの場合は、横にスクロールして全体をご確認いただけます
+※横にスクロールして全体をご確認いただけます
 </p>
 
 <div class="comparison-wrapper">
@@ -292,8 +292,8 @@ th, td {
         </tr>
 
         <tr>
-          <td class="sticky-col">面談</td>
-          <td class="highlight-col">〇 保護者面談月1回実施(週一回メールにて生徒様の進捗報告実施)</td>
+          <td class="sticky-col">確認テスト・面談</td>
+          <td class="highlight-col">〇 週1回必ず実施</td>
           <td>〇 定期的な作戦会議あり</td>
           <td>△ 授業に含まれる場合あり</td>
         </tr>
@@ -312,6 +312,13 @@ th, td {
           <td>〇 教材費不要</td>
         </tr>
 
+        <tr>
+          <td class="sticky-col">特徴</td>
+          <td class="highlight-col strong"><strong>AI中心＋圧倒的低価格</strong></td>
+          <td>AI教材＋個別進捗管理</td>
+          <td>講師による対面指導中心</td>
+        </tr>
+
       </tbody>
     </table>
   </div>
@@ -319,37 +326,25 @@ th, td {
 
 <style>
 
-/* ===== 注意テキスト ===== */
+/* ===== 注意 ===== */
 .comparison-note{
   font-size:13px;
   color:#6b7280;
   margin-bottom:8px;
 }
 
-/* ===== 横スクロール制御 ===== */
-.comparison-wrapper {
-  position: relative;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+/* ===== 横スクロール ===== */
+.comparison-wrapper{
+  overflow-x:auto;
+  position:relative;
+  -webkit-overflow-scrolling:touch;
 }
 
-/* スクロールヒント（右フェード） */
-.comparison-wrapper::after {
-  content:"";
-  position:absolute;
-  top:0;
-  right:0;
-  width:40px;
-  height:100%;
-  pointer-events:none;
-  background:linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
-}
-
-/* ===== テーブル基本 ===== */
-.comparison-table table {
-  min-width: 820px;
+/* ===== テーブル ===== */
+.comparison-table table{
+  min-width:820px;
   width:100%;
-  border-collapse: collapse;
+  border-collapse:collapse;
   background:#fff;
   box-shadow:0 4px 20px rgba(0,0,0,0.05);
   border-radius:10px;
@@ -357,7 +352,7 @@ th, td {
 }
 
 .comparison-table th,
-.comparison-table td {
+.comparison-table td{
   border:1px solid #e5e7eb;
   padding:14px;
   text-align:left;
@@ -378,54 +373,41 @@ th, td {
 .sticky-col{
   position:sticky;
   left:0;
-  background:#ffffff;
+  background:#fff;
   z-index:4;
   font-weight:bold;
 }
 
-/* 左上セル最前面 */
 thead .sticky-col{
   z-index:6;
   background:#f3f4f6;
 }
 
-/* ===== revolution強調列 ===== */
+/* ===== revolution列：帯強調 ===== */
 .highlight-col{
   background:#ecfdf5;
-  position:relative;
+  border-left:6px solid #22c55e;
+  border-right:6px solid #22c55e;
 }
 
-/* 列に縦ライン強調 */
-.highlight-col::after{
-  content:"";
-  position:absolute;
-  top:0;
-  right:0;
-  width:4px;
-  height:100%;
+/* ヘッダーはさらに濃く */
+thead .highlight-col{
   background:#22c55e;
+  color:#fff;
+  font-weight:700;
 }
 
-/* 強調文字 */
+/* 金額など強調 */
 .strong{
   font-size:15px;
   font-weight:700;
   color:#065f46;
 }
 
-/* ホバー効果（PC） */
+/* PCホバー */
 .comparison-table tbody tr:hover{
   background:#f9fafb;
   transition:0.2s;
-}
-
-/* スクロールバー */
-.comparison-wrapper::-webkit-scrollbar{
-  height:6px;
-}
-.comparison-wrapper::-webkit-scrollbar-thumb{
-  background:#d1d5db;
-  border-radius:3px;
 }
 
 </style>
