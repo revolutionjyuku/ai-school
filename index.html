@@ -301,51 +301,59 @@ th, td {
   margin-bottom:8px;
 }
 
+/* 横スクロール専用ラッパー */
 .comparison-wrapper{
   overflow-x:auto;
   position:relative;
   -webkit-overflow-scrolling:touch;
 }
 
+/* テーブル本体 */
 .comparison-table table{
-  min-width:820px;
-  width:100%;
-  border-collapse:collapse;
+  min-width:900px; /* ← 横スクロールさせるため固定 */
+  border-collapse:separate;
+  border-spacing:0;
   background:#fff;
+  width:max-content; /* ← これが重要 */
   box-shadow:0 4px 20px rgba(0,0,0,0.05);
   border-radius:10px;
-  overflow:hidden;
 }
 
+/* 共通セル */
 .comparison-table th,
 .comparison-table td{
   border:1px solid #e5e7eb;
-  padding:14px;
+  padding:16px 18px;
   text-align:left;
   vertical-align:top;
   font-size:14px;
+  background:#fff;
+  white-space:normal;
 }
 
 /* ヘッダー固定 */
 .comparison-table thead th{
   background:#f9fafb;
-  font-weight:bold;
+  font-weight:700;
   position:sticky;
   top:0;
-  z-index:5;
+  z-index:10;
 }
 
-/* 左列固定 */
+/* ===== 左列固定（最重要） ===== */
 .sticky-col{
   position:sticky;
   left:0;
-  background:#fff;
-  z-index:4;
-  font-weight:bold;
+  z-index:11;
+  background:#ffffff;
+  font-weight:700;
+  min-width:150px;
+  box-shadow:4px 0 8px -4px rgba(0,0,0,0.1);
 }
 
+/* ヘッダー左上セル */
 thead .sticky-col{
-  z-index:6;
+  z-index:20;
   background:#f3f4f6;
 }
 
@@ -354,47 +362,13 @@ thead .sticky-col{
   background:#ecfdf5;
   border-left:6px solid #22c55e;
   border-right:6px solid #22c55e;
-  position:relative;
 }
 
-/* 🔥 スマホで列内に塾名を常時表示 */
-@media (max-width:768px){
-
-  .highlight-col::before{
-    content:attr(data-school);
-    display:block;
-    font-size:11px;
-    font-weight:600;
-    color:#16a34a;
-    margin-bottom:6px;
-  }
-
-}
-
-/* 強調 */
+/* 強調テキスト */
 .strong{
   font-size:15px;
   font-weight:700;
   color:#065f46;
-}
-
-/* ===== 比較表は縦積み解除 ===== */
-@media screen and (max-width: 768px) {
-
-  .comparison-table table,
-  .comparison-table thead,
-  .comparison-table tbody,
-  .comparison-table th,
-  .comparison-table td,
-  .comparison-table tr {
-    display: table;
-    width: auto;
-  }
-
-  .comparison-table thead tr {
-    display: table-row;
-  }
-
 }
 
 </style>
