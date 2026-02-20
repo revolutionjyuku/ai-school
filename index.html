@@ -90,16 +90,6 @@ ul {
     padding: 20px;
     border-radius: 10px;
 }
-table {
-    width:100%;
-    border-collapse:collapse;
-    text-align:left;
-    border:1px solid #ccc;
-}
-th, td {
-    border:1px solid #ccc;
-    padding:8px;
-}
 
 </style>
 </head>
@@ -303,56 +293,58 @@ th, td {
 
 .comparison-wrapper{
   overflow-x:auto;
+  overflow-y:visible;
   -webkit-overflow-scrolling:touch;
 }
 
 /* テーブル本体 */
 .comparison-table table{
-  min-width:820px; /* 少し圧縮 */
+  min-width:820px;
   width:max-content;
   border-collapse:separate;
   border-spacing:0;
   background:#fff;
-  border-radius:10px;
-  box-shadow:0 4px 20px rgba(0,0,0,0.05);
 }
 
 /* セル共通 */
 .comparison-table th,
 .comparison-table td{
   border:1px solid #e5e7eb;
-  padding:12px 14px; /* 余白縮小 */
+  padding:12px 14px;
   text-align:left;
   vertical-align:top;
   font-size:14px;
   background:#fff;
 }
 
-/* ヘッダー */
+/* ===== 上ヘッダー（塾名） ===== */
 .comparison-table thead th{
-  background:#f9fafb;
-  font-weight:700;
   position:sticky;
   top:0;
-  z-index:5;
+  background:#f9fafb;
+  font-weight:700;
+  z-index:10;
 }
 
-/* ===== 左列固定（幅を圧縮） ===== */
-.sticky-col{
+/* ===== 左列（比較項目一覧） ===== */
+.comparison-table th.sticky-col,
+.comparison-table td.sticky-col{
   position:sticky;
   left:0;
-  z-index:6; /* ← ヘッダーより少し上 */
-  background:#fff;
+  background:#ffffff;
   font-weight:700;
-  min-width:110px; /* ← 狭くした */
+  min-width:110px;
   max-width:130px;
-  box-shadow:3px 0 6px -3px rgba(0,0,0,0.15);
+  z-index:20;
 }
 
-/* 左上ヘッダー */
-thead .sticky-col{
+/* ===== 左上セル（比較項目）最強固定 ===== */
+.comparison-table thead th.sticky-col{
+  position:sticky;
+  top:0;
+  left:0;
   background:#f3f4f6;
-  z-index:7; /* 最前面固定 */
+  z-index:1000;
 }
 
 /* revolution列 */
