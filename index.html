@@ -265,58 +265,51 @@ th, td {
 
         <tr>
           <td class="sticky-col">月謝</td>
-          <td class="highlight-col strong">1教科 5,500円（税込）</td>
+          <td class="highlight-col strong" data-school="revolution塾">1教科 5,500円（税込）</td>
           <td>1教科 22,000円〜</td>
           <td>1教科 22,528円〜（週1回80分〜）</td>
         </tr>
 
         <tr>
           <td class="sticky-col">入会金</td>
-          <td class="highlight-col strong">〇 なし</td>
+          <td class="highlight-col strong" data-school="revolution塾">〇 なし</td>
           <td>△ 22,000円（税込）</td>
           <td>△ 19,800円（税込）</td>
         </tr>
 
         <tr>
           <td class="sticky-col">指導方式</td>
-          <td class="highlight-col">市販参考書＋AIによる毎日の進捗管理＋週1回確認テスト</td>
+          <td class="highlight-col" data-school="revolution塾">市販参考書＋AIによる毎日の進捗管理＋週1回確認テスト</td>
           <td>授業なし、AI教材＋サポート中心</td>
           <td>オンライン個別授業</td>
         </tr>
 
         <tr>
           <td class="sticky-col">学習管理</td>
-          <td class="highlight-col">〇 AI＋塾長による徹底管理</td>
+          <td class="highlight-col" data-school="revolution塾">〇 AI＋塾長による徹底管理</td>
           <td>〇 AI教材＋進捗管理</td>
           <td>△ 講師主体</td>
         </tr>
 
         <tr>
           <td class="sticky-col">確認テスト・面談</td>
-          <td class="highlight-col">〇 週1回必ず実施</td>
+          <td class="highlight-col" data-school="revolution塾">〇 週1回必ず実施</td>
           <td>〇 定期的な作戦会議あり</td>
           <td>△ 授業に含まれる場合あり</td>
         </tr>
 
         <tr>
           <td class="sticky-col">自習室</td>
-          <td class="highlight-col">〇 オンライン自習室あり</td>
+          <td class="highlight-col" data-school="revolution塾">〇 オンライン自習室あり</td>
           <td>〇 オンライン自習室あり</td>
           <td>〇 オンライン自習室あり</td>
         </tr>
 
         <tr>
           <td class="sticky-col">教材費</td>
-          <td class="highlight-col">△ 指定市販教材購入あり（1教科1,760円）</td>
+          <td class="highlight-col" data-school="revolution塾">△ 指定市販教材購入あり（1教科1,760円）</td>
           <td>〇 AI教材込み</td>
           <td>〇 教材費不要</td>
-        </tr>
-
-        <tr>
-          <td class="sticky-col">特徴</td>
-          <td class="highlight-col strong"><strong>AI中心＋圧倒的低価格</strong></td>
-          <td>AI教材＋個別進捗管理</td>
-          <td>講師による対面指導中心</td>
         </tr>
 
       </tbody>
@@ -326,21 +319,18 @@ th, td {
 
 <style>
 
-/* ===== 注意 ===== */
 .comparison-note{
   font-size:13px;
   color:#6b7280;
   margin-bottom:8px;
 }
 
-/* ===== 横スクロール ===== */
 .comparison-wrapper{
   overflow-x:auto;
   position:relative;
   -webkit-overflow-scrolling:touch;
 }
 
-/* ===== テーブル ===== */
 .comparison-table table{
   min-width:820px;
   width:100%;
@@ -360,7 +350,7 @@ th, td {
   font-size:14px;
 }
 
-/* ===== ヘッダー固定 ===== */
+/* ヘッダー固定 */
 .comparison-table thead th{
   background:#f9fafb;
   font-weight:bold;
@@ -369,7 +359,7 @@ th, td {
   z-index:5;
 }
 
-/* ===== 左列固定 ===== */
+/* 左列固定 */
 .sticky-col{
   position:sticky;
   left:0;
@@ -383,31 +373,52 @@ thead .sticky-col{
   background:#f3f4f6;
 }
 
-/* ===== revolution列：帯強調 ===== */
+/* revolution列 */
 .highlight-col{
   background:#ecfdf5;
   border-left:6px solid #22c55e;
   border-right:6px solid #22c55e;
+  position:relative;
 }
 
-/* ヘッダーはさらに濃く */
-thead .highlight-col{
-  background:#22c55e;
-  color:#fff;
-  font-weight:700;
+/* 🔥 スマホで列内に塾名を常時表示 */
+@media (max-width:768px){
+
+  .highlight-col::before{
+    content:attr(data-school);
+    display:block;
+    font-size:11px;
+    font-weight:600;
+    color:#16a34a;
+    margin-bottom:6px;
+  }
+
 }
 
-/* 金額など強調 */
+/* 強調 */
 .strong{
   font-size:15px;
   font-weight:700;
   color:#065f46;
 }
 
-/* PCホバー */
-.comparison-table tbody tr:hover{
-  background:#f9fafb;
-  transition:0.2s;
+/* ===== 比較表は縦積み解除 ===== */
+@media screen and (max-width: 768px) {
+
+  .comparison-table table,
+  .comparison-table thead,
+  .comparison-table tbody,
+  .comparison-table th,
+  .comparison-table td,
+  .comparison-table tr {
+    display: table;
+    width: auto;
+  }
+
+  .comparison-table thead tr {
+    display: table-row;
+  }
+
 }
 
 </style>
