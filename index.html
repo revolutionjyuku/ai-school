@@ -100,31 +100,7 @@ th, td {
     border:1px solid #ccc;
     padding:8px;
 }
-@media screen and (max-width: 768px) {
-  table, thead, tbody, th, td, tr {
-    display: block;
-    width: 100%;
-  }
-  thead tr {
-    display: none;
-  }
-  td {
-    position: relative;
-    padding-left: 50%;
-    padding-top:10px;
-    padding-bottom:10px;
-    border: 1px solid #ccc;
-    text-align: left;
-  }
-  td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    font-weight: bold;
-    width: 45%;
-  }
-}
+
 </style>
 </head>
 
@@ -292,8 +268,8 @@ th, td {
         </tr>
 
         <tr>
-          <td class="sticky-col">確認テスト・面談</td>
-          <td class="highlight-col" data-school="revolution塾">〇 週1回必ず実施</td>
+          <td class="sticky-col">面談</td>
+          <td class="highlight-col" data-school="revolution塾">〇 月1回三者面談実施</td>
           <td>〇 定期的な作戦会議あり</td>
           <td>△ 授業に含まれる場合あり</td>
         </tr>
