@@ -91,6 +91,63 @@ ul {
     border-radius: 10px;
 }
 
+/* ===== 料金シミュレーター ===== */
+
+.simulator-box{
+  background:#ffffff;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  margin-top:30px;
+}
+
+.simulator-box h2{
+  border:none;
+  margin-top:0;
+}
+
+.simulator-box select,
+.simulator-box input{
+  padding:10px;
+  margin:10px 0;
+  width:100%;
+  font-size:16px;
+  border:1px solid #ddd;
+  border-radius:6px;
+}
+
+.simulator-box button{
+  margin-top:10px;
+  padding:12px 20px;
+  background:#1e3a8a;
+  color:white;
+  border:none;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.simulator-box button:hover{
+  opacity:0.9;
+}
+
+.result-box{
+  background:#f3f4f6;
+  padding:20px;
+  margin-top:20px;
+  border-radius:8px;
+}
+
+.strike{
+  text-decoration:line-through;
+  color:#9ca3af;
+}
+
+.big{
+  font-size:22px;
+  font-weight:bold;
+}
+
 <style>
 
 /* スライドイン演出 */
@@ -259,6 +316,61 @@ header h3 {
     margin: 0 0 30px 0;
 }
 
+.main-catch {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.red {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.large {
+  font-size: 20px;
+}
+
+.marker {
+  background: linear-gradient(transparent 60%, #ffe08a 60%);
+}
+
+.important {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.feature-list {
+  margin: 25px 0;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+.strong-message {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+.red-line {
+  border-top: 2px solid #d32f2f;
+  border-bottom: 2px solid #d32f2f;
+  padding: 15px 0;
+}
+
+.target {
+  margin-top: 40px;
+  font-weight: 500;
+}
+
+.final-message {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
 </style>
 
 </head>
@@ -313,8 +425,74 @@ const timer = setInterval(function() {
   </div>
 </div>
 
-<section>
+<section id="founder-message" style="padding:60px 20px; background-color:#ffffff;">
+  <div style="max-width:800px; margin:0 auto; line-height:1.9; font-size:16px;">
 
+<h2 style="text-align:center; margin-bottom:20px;">― 開校に込めた想い ―</h2>
+
+<p class="main-catch">
+  業界最安値で、業界最高品質を。
+</p>
+
+<p>
+「塾は高いから、うちは通わせられない。」
+そうして機会を諦めてしまうご家庭が、今も少なくありません。
+</p>
+
+<p>
+一方で、経済的に余裕のある家庭の子どもは、当たり前のように学習環境を手にしています。
+その差が、そのまま将来の選択肢の差になっていく現実があります。
+</p>
+
+<p>
+私は、子どもの学力は“才能”よりも<strong class="marker">“環境”</strong>で決まると考えています。
+しかし、その環境が大人の事情によって左右されてしまうことに、強い疑問を持ちました。
+</p>
+
+<p>
+一般的な塾の平均月謝は
+<strong class="red">約3万円</strong>。
+そこに入会金、講習費、教材費が重なります。
+</p>
+
+<p>
+私は、この構造を変えたいと思いました。
+よって<strong class="red large">revolution塾では月5,500円から</strong>で受講できるようにしました。
+</p>
+
+<p class="important">
+しかし、安いだけで結果が出なければ、それは意味がありません。
+</p>
+
+<ul class="feature-list">
+  <li>一人ひとりに向き合う丁寧な指導</li>
+  <li>家庭学習まで徹底して管理する仕組み</li>
+  <li>子どもが迷わず努力を続けられる環境設計</li>
+</ul>
+
+<p>
+質の高い塾とは、単に授業を提供する場所ではありません。
+子どもが「できるようになる」まで責任を持つ場所だと、私たちは考えています。
+</p>
+
+<p class="strong-message red-line">
+業界最安値で、業界最高品質を提供する。
+</p>
+
+<p>
+それが、この塾の出発点です。
+</p>
+
+<p class="target">
+ただし、誰でもいいわけではありません。
+本気で変わりたい人。
+本気で挑戦する人。
+</p>
+
+<p class="final-message red">
+その覚悟があるご家庭・お子さまに、
+私は全力で向き合います。
+</p>
 <h3>もう「教わる」時代ではありません</h3>
 
 <p>
@@ -399,13 +577,73 @@ const timer = setInterval(function() {
 <p><strong>上記以外の料金は一切発生いたしません。</strong></p>
 </div>
 
+<h3>料金シミュレーター</h3>
+
+<div class="simulator-box">
+
+<label>教科数を選択</label>
+<select id="subjects">
+  <option value="5500">1教科（5,500円）</option>
+  <option value="8800">2教科（8,800円）</option>
+  <option value="11300">3教科（11,300円）</option>
+  <option value="13300">4教科（13,300円）</option>
+</select>
+
+<label>入会日を選択</label>
+<input type="date" id="startDate">
+
+<button onclick="calculate()">料金を計算する</button>
+
+<div class="result-box" id="result" style="display:none;">
+  
+  <h4>初月のお支払合計金額</h4>
+  <p id="firstMonth"></p>
+
+  <h4>2か月目以降のお支払い（前払い）</h4>
+  <p id="secondMonth"></p>
+
+<div style="margin-top:20px; background:#fff; padding:15px; border-radius:8px; border:1px solid #ddd; font-size:14px; line-height:1.8;">
+
+  <strong>【お支払いの流れ】</strong><br><br>
+
+  <span class="red">初月</span>：
+  当月日割分 ＋ 2か月目分<br>
+
+  <span class="red">2か月目</span>：
+  3か月目分を前払い<br>
+
+  <span class="red">3か月目</span>：
+  4か月目分を前払い<br>
+
+  <span class="red">以降</span>：
+  毎月翌月分を前払い
+
+</div>
+  <hr style="margin:20px 0;">
+
+  <p id="bookInfo" style="font-size:14px;"></p>
+
+</div>
+<div id="bookSection" style="margin-top:20px; padding:15px; border:1px solid #ccc; border-radius:8px;">
+  <h3>教材費について</h3>
+  <div id="bookInfo"></div>
+  <p style="font-size:14px; line-height:1.6; margin-top:10px;">
+    ※各科目を受講開始する際に、指定の市販参考書をご購入いただきます。（1教科 1,760円）<br>
+    ※同一科目を継続利用中は再購入不要です。<br>
+    ※科目を追加・変更された場合は、該当科目分の教材費が必要となります。<br>
+    ※書店等でのご購入となり、当塾へのお支払いではありません。
+  </p>
+</div>
+
+</div>
+
 <h3>サービス内容</h3>
 <ul>
 <li>現在の成績と志望校から逆算し、毎週の学習内容を設計</li>
-<li>週1回の確認テストで定着度をチェック</li>
+<li>週1回の確認テストで定着度をチェック※1</li>
 <li>学習状況を保護者様へ共有</li>
 <li>オンライン自習室で「やらざるを得ない環境」を提供</li>
-<li>塾長にいつでも何回でもLINEで相談</li>
+<li>24時間365日LINEで質問・相談</li>
 <li>
 1か月前からの定期テスト対策※
 <a href="#teiki-details" style="font-size:13px; margin-left:6px;">詳細はこちら</a>
@@ -416,158 +654,6 @@ const timer = setInterval(function() {
 ※対象科目：英語・数学・理科・社会（（国語は現在カリキュラム作成中のため対象外））
 </p>
 
-<h3>他塾との比較</h3>
-
-<p class="comparison-note">
-※横にスクロールして全体をご確認いただけます
-</p>
-
-<div class="comparison-wrapper">
-  <div class="comparison-table">
-    <table>
-      <thead>
-        <tr>
-          <th class="sticky-col">比較項目</th>
-          <th class="highlight-col">revolution塾</th>
-          <th>A社進捗管理型塾</th>
-          <th>B社授業型塾</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <tr>
-          <td class="sticky-col">月謝</td>
-          <td class="highlight-col strong" data-school="revolution塾">1教科 5,500円（税込）</td>
-          <td>1教科 22,000円〜</td>
-          <td>1教科 22,528円〜（週1回80分〜）</td>
-        </tr>
-
-        <tr>
-          <td class="sticky-col">入会金</td>
-          <td class="highlight-col strong" data-school="revolution塾">〇 なし</td>
-          <td>△ 22,000円（税込）</td>
-          <td>△ 19,800円（税込）</td>
-        </tr>
-
-        <tr>
-          <td class="sticky-col">指導方式</td>
-          <td class="highlight-col" data-school="revolution塾">市販参考書＋AIによる毎日の進捗管理＋週1回確認テスト</td>
-          <td>授業なし、AI教材＋サポート中心</td>
-          <td>オンライン個別授業</td>
-        </tr>
-
-        <tr>
-          <td class="sticky-col">学習管理</td>
-          <td class="highlight-col" data-school="revolution塾">〇 AI＋塾長による徹底管理</td>
-          <td>〇 AI教材＋進捗管理</td>
-          <td>△ 講師主体</td>
-        </tr>
-
-        <tr>
-          <td class="sticky-col">面談</td>
-          <td class="highlight-col" data-school="revolution塾">〇 月1回三者面談実施</td>
-          <td>〇 定期的な作戦会議あり</td>
-          <td>△ 授業に含まれる場合あり</td>
-        </tr>
-
-        <tr>
-          <td class="sticky-col">自習室</td>
-          <td class="highlight-col" data-school="revolution塾">〇 オンライン自習室あり</td>
-          <td>〇 オンライン自習室あり</td>
-          <td>〇 オンライン自習室あり</td>
-        </tr>
-
-        <tr>
-          <td class="sticky-col">教材費</td>
-          <td class="highlight-col" data-school="revolution塾">△ 指定市販教材購入あり（1教科1,760円）</td>
-          <td>〇 AI教材込み</td>
-          <td>〇 教材費不要</td>
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<style>
-
-.comparison-note{
-  font-size:13px;
-  color:#6b7280;
-  margin-bottom:6px;
-}
-
-.comparison-wrapper{
-  overflow-x:auto;
-  overflow-y:visible;
-  -webkit-overflow-scrolling:touch;
-}
-
-/* テーブル本体 */
-.comparison-table table{
-  min-width:820px;
-  width:max-content;
-  border-collapse:separate;
-  border-spacing:0;
-  background:#fff;
-}
-
-/* セル共通 */
-.comparison-table th,
-.comparison-table td{
-  border:1px solid #e5e7eb;
-  padding:12px 14px;
-  text-align:left;
-  vertical-align:top;
-  font-size:14px;
-  background:#fff;
-}
-
-/* ===== 上ヘッダー（塾名） ===== */
-.comparison-table thead th{
-  position:sticky;
-  top:0;
-  background:#f9fafb;
-  font-weight:700;
-  z-index:10;
-}
-
-/* ===== 左列（比較項目一覧） ===== */
-.comparison-table th.sticky-col,
-.comparison-table td.sticky-col{
-  position:sticky;
-  left:0;
-  background:#ffffff;
-  font-weight:700;
-  min-width:110px;
-  max-width:130px;
-  z-index:20;
-}
-
-/* ===== 左上セル（比較項目）最強固定 ===== */
-.comparison-table thead th.sticky-col{
-  position:sticky;
-  top:0;
-  left:0;
-  background:#f3f4f6;
-  z-index:1000;
-}
-
-/* revolution列 */
-.highlight-col{
-  background:#ecfdf5;
-  border-left:5px solid #22c55e;
-  border-right:5px solid #22c55e;
-}
-
-/* 強調 */
-.strong{
-  font-size:15px;
-  font-weight:700;
-  color:#065f46;
-}
-
-</style>
 
 <div style="margin-top:40px;">
 
@@ -626,13 +712,12 @@ AI分析 × 塾長監修による完全オーダーメイド対策を行いま�
 <section id="teacher-profile" style="padding:50px 20px; background-color:#f9f9f9;">
   <div style="max-width:800px; margin:0 auto; text-align:center;">
     <h2>塾長のご紹介</h2>
-    <img src="images/teacher.jpg" alt="塾長 古沢凜人" style="width:150px; height:150px; border-radius:50%; margin-top:20px;">
-    <p style="margin-top:20px; line-height:1.6; font-size:16px;">
+       <p style="margin-top:20px; line-height:1.6; font-size:16px;">
       <strong>古沢凜人</strong><br>
-      ITコンサルタントとして勤務経験後、AIを活用した学習支援に従事。<br>
-      中学・高校数学指導歴5年以上。<br>
-      「生徒一人ひとりが自分で考えられる力を育てたい」との思いで塾を開校。
-    </p>
+     個別学習塾で講師として指導を行った後、ITエンジニアとしてのキャリアを経験。
+業務の中でAIを活用し、資格取得にもAIを用いて合格を実現しました。
+塾講師時代の経験とAI活用の実体験から、「AI×人」の学習こそ成績向上に直結すると確信。
+「教育格差に終止符を」という理念をモットーに日々全力で生徒と向き合っています。    </p>
   </div>
 </section>
 
@@ -643,7 +728,7 @@ AI分析 × 塾長監修による完全オーダーメイド対策を行いま�
     <ol style="margin-top:30px; font-size:16px; line-height:2;">
       <li><strong>お申し込み：</strong>ホームページのフォームまたは公式LINEから希望日時と学年を送信</li>
       <li><strong>日程調整：</strong>塾長からご連絡し、体験授業の日程を決定</li>
-      <li><strong>無料体験授業：</strong>1教科から複数教科まで対応可能</li>
+      <li><strong>無料体験指導：</strong>数学のみ対応</li>
       <li><strong>体験後の相談：</strong>学習プランや入塾についてのご相談</li>
     </ol>
     <div style="text-align:center; margin-top:30px;">
@@ -669,6 +754,67 @@ AI分析 × 塾長監修による完全オーダーメイド対策を行いま�
 <div class="footer">
 © 2026 revolution塾 All Rights Reserved.
 </div>
+
+<script>
+function calculate(){
+
+  const monthlyFee = parseInt(document.getElementById("subjects").value);
+  const dateInput = document.getElementById("startDate").value;
+
+  if(!dateInput){
+    alert("入会日を選択してください");
+    return;
+  }
+
+  const startDate = new Date(dateInput);
+  const year = startDate.getFullYear();
+  const month = startDate.getMonth();
+
+  const lastDay = new Date(year, month+1, 0).getDate();
+  const remainingDays = lastDay - startDate.getDate() + 1;
+
+  const totalWeeks = lastDay / 7;
+  const remainingWeeks = remainingDays / 7;
+
+  const prorated = Math.round(monthlyFee * (remainingWeeks / totalWeeks));
+
+  // 初月は按分＋翌月分
+  const firstTotalOriginal = prorated + monthlyFee;
+
+  document.getElementById("result").style.display = "block";
+
+  // 初月表示（無料キャンペーン）
+  document.getElementById("firstMonth").innerHTML =
+  "<span class='strike'>" +
+  firstTotalOriginal.toLocaleString() +
+  "円（当月週割分＋2か月目満額）</span>" +
+  "<br><span class='red big'>キャンペーン適用：当月分のみ 0円</span>" +
+  "<br><span class='red big'>お支払い：2か月目分 " +
+  monthlyFee.toLocaleString() + "円</span>";
+
+  // 2か月目以降
+  document.getElementById("secondMonth").innerHTML =
+  "<span class='red big'>" +
+  monthlyFee.toLocaleString() +
+  "円（3か月目分を前払い）</span>";
+
+  // 参考書代（別表示）
+  let subjectCount = 1;
+  if(monthlyFee === 8800) subjectCount = 2;
+  if(monthlyFee === 11300) subjectCount = 3;
+  if(monthlyFee === 13300) subjectCount = 4;
+
+  const bookTotal = subjectCount * 1760;
+
+  document.getElementById("bookInfo").innerHTML =
+    "※上記料金とは別に、市販の参考書をご購入いただきます。<br>" +
+    "（1教科1,760円 × " + subjectCount + "教科 ＝ " +
+    bookTotal.toLocaleString() + "円）<br>" +
+    "※書店等でのご購入となり、当塾へのお支払いではありません。";
+
+}
+
+</script>
 
 </body>
 </html>
