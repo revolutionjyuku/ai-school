@@ -95,62 +95,6 @@ ul {
     border-radius: 10px;
 }
 
-/* ===== 料金シミュレーター ===== */
-
-.simulator-box{
-  background:#ffffff;
-  padding:30px;
-  border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-  margin-top:30px;
-}
-
-.simulator-box h2{
-  border:none;
-  margin-top:0;
-}
-
-.simulator-box select,
-.simulator-box input{
-  padding:10px;
-  margin:10px 0;
-  width:100%;
-  font-size:16px;
-  border:1px solid #ddd;
-  border-radius:6px;
-}
-
-.simulator-box button{
-  margin-top:10px;
-  padding:12px 20px;
-  background:#1e3a8a;
-  color:white;
-  border:none;
-  border-radius:6px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.simulator-box button:hover{
-  opacity:0.9;
-}
-
-.result-box{
-  background:#f3f4f6;
-  padding:20px;
-  margin-top:20px;
-  border-radius:8px;
-}
-
-.strike{
-  text-decoration:line-through;
-  color:#9ca3af;
-}
-
-.big{
-  font-size:22px;
-  font-weight:bold;
-}
 
 /* スライドイン演出 */
 .slide-offer {
@@ -172,24 +116,9 @@ ul {
   padding: 40px 25px;
   margin: 60px 0;
   text-align: center;
-  background: linear-gradient(135deg, #fff7ed, #ffe4e6);
   box-shadow: 0 15px 40px rgba(0,0,0,0.12);
   position: relative;
   overflow: hidden;
-}
-
-/* 発光強調 */
-.special-offer::before {
-  pointer-events: none;
-}
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,120,0,0.25), transparent 60%);
-  animation: glowMove 4s linear infinite;
 }
 
 @keyframes glowMove {
@@ -216,12 +145,6 @@ ul {
   margin-top: 15px;
 }
 
-
-.slide-offer {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: slideUp 0.8s ease-out forwards;
-}
 
 @keyframes slideUp {
   to {
@@ -254,30 +177,6 @@ ul {
   margin-top: 10px;
 }
 
-.countdown {
-  font-size: 18px;
-  margin-top: 8px;
-  font-weight: 600;
-}
-
-.offer-btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 14px 32px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  background: linear-gradient(90deg,#22c55e,#16a34a);
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  transition: 0.3s;
-}
-
-.offer-btn:hover {
-  transform: translateY(-3px);
-}
-
 .special-offer small {
   display:block;
   margin-top:15px;
@@ -285,14 +184,67 @@ ul {
   color:#555;
 }
 
-/* ヘッダー背景：炎っぽくグラデーションアニメーション */
+
 .header-bg {
-    background: linear-gradient(45deg, #ff5e5e, #ffbb33, #ff5e5e);
-    background-size: 400% 400%;
-    animation: fireBG 8s ease infinite;
-    color: white;
-    padding: 100px 20px;
+    position: relative;
+    height: 85vh;
+
+    background: url("28364580_s.jpg") no-repeat center 70% / cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    color: white;
+}
+
+.header-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.header-bg h1 {
+    position: relative;
+    z-index: 2;
+}
+
+.header-bg {
+    position: relative;
+    height: 100vh;
+
+    background: url("28364580_s.jpg") no-repeat center center / cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+}
+
+.header-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5); /* ←これが重要 */
+    z-index: 1;
+}
+
+.header-bg h1 {
+    position: relative;
+    z-index: 2;
 }
 
 @keyframes fireBG {
@@ -380,33 +332,11 @@ header h3 {
 
 </head>
 
-<script>
-const deadline = new Date("2026-03-31T23:59:59").getTime();
-
-const timer = setInterval(function() {
-  const now = new Date().getTime();
-  const distance = deadline - now;
-
-  if (distance < 0) {
-    document.getElementById("timer").innerHTML = "終了しました";
-    clearInterval(timer);
-    return;
-  }
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-  document.getElementById("timer").innerHTML =
-    days + "日 " + hours + "時間 " + minutes + "分";
-}, 1000);
-</script>
-
 <body>
 
 <header class="header-bg">
- <h1 class="slide-in-left">revolution塾</h1>
-  <h2 class="slide-in-left delay-1">中学生専門！<ruby>愛<rt>う</rt></ruby>かる塾。</h2>
+ <h1 class="slide-in-left">勉強とは最強の自分磨きだ。revolution塾</h1>
+
 
 </header>
 
@@ -432,20 +362,21 @@ const timer = setInterval(function() {
 <h2 style="text-align:center; margin-bottom:20px;">― 開校に込めた想い ―</h2>
 
 <p class="main-catch">
-私は勉強できない人と決めつけてほしくない!
+「勉強=最強の自分磨き」である
 </p>
 
 <p>
 
 勉強には、「地頭、才能」が必要と思っていませんか？
-それは真っ赤なウソです。
-皆さんは一度はゲームをやったことがあると思います。
-最初は下手ですが、進めていくうちにうまくなり楽しくなってきますよね。
-逆にほかのゲームで、自分のプレイが思うようにいかず、つまらないと思い、やめてしまった経験はないですか？
-勉強も全く同じです。
-やれば勉強できるようになります。
-勉強できる子は、勉強が楽しくなる瞬間まで続けている、ただそれだけです。
-しかし、勉強が苦手な子は楽しくなる前にやめてしまっているだけなんですね。
+それは全くの誤解です。
+勉強をすれば必ず成績は伸びます。
+例えば皆さんは自転車に乗れますよね。では最初から乗れたのでしょうか？
+違いますよね。何回転んでも諦めず、乗れるように練習をしたはずです。
+ではなぜ皆さんは勉強も同じようにできないのでしょうか？
+自転車は親が練習のサポートをしてくれました。
+しかし、勉強となると自分でやるしかないです。
+つまり、勉強は自分自身で管理ができる人になるための訓練なのです。
+
 
 
 
@@ -854,63 +785,6 @@ target="_blank"
 </div>
 
 <script>
-function calculate(){
-
-  const monthlyFee = parseInt(document.getElementById("subjects").value);
-  const dateInput = document.getElementById("startDate").value;
-
-  if(!dateInput){
-    alert("入会日を選択してください");
-    return;
-  }
-
-  const startDate = new Date(dateInput);
-  const year = startDate.getFullYear();
-  const month = startDate.getMonth();
-
-  const lastDay = new Date(year, month+1, 0).getDate();
-  const remainingDays = lastDay - startDate.getDate() + 1;
-
-  const totalWeeks = lastDay / 7;
-  const remainingWeeks = remainingDays / 7;
-
-  const prorated = Math.round(monthlyFee * (remainingWeeks / totalWeeks));
-
-  // 初月は按分＋翌月分
-  const firstTotalOriginal = prorated + monthlyFee;
-
-  document.getElementById("result").style.display = "block";
-
-  // 初月表示（無料キャンペーン）
-  document.getElementById("firstMonth").innerHTML =
-  "<span class='strike'>" +
-  firstTotalOriginal.toLocaleString() +
-  "円（当月週割分＋2か月目満額）</span>" +
-  "<br><span class='red big'>キャンペーン適用：当月分のみ 0円</span>" +
-  "<br><span class='red big'>お支払い：2か月目分 " +
-  monthlyFee.toLocaleString() + "円</span>";
-
-  // 2か月目以降
-  document.getElementById("secondMonth").innerHTML =
-  "<span class='red big'>" +
-  monthlyFee.toLocaleString() +
-  "円（3か月目分を前払い）</span>";
-
-  // 参考書代（別表示）
-  let subjectCount = 1;
-  if(monthlyFee === 8800) subjectCount = 2;
-  if(monthlyFee === 11300) subjectCount = 3;
-  if(monthlyFee === 13300) subjectCount = 4;
-
-  const bookTotal = subjectCount * 1760;
-
-  document.getElementById("bookInfo").innerHTML =
-    "※上記料金とは別に、市販の参考書をご購入いただきます。<br>" +
-    "（1教科1,760円 × " + subjectCount + "教科 ＝ " +
-    bookTotal.toLocaleString() + "円）<br>" +
-    "※書店等でのご購入となり、当塾へのお支払いではありません。";
-
-}
 
 </script>
 
